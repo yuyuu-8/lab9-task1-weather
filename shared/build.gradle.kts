@@ -84,6 +84,8 @@ kotlin {
         }
         jvmTest.dependencies {
             implementation(compose.uiTest)
+            // Подтягивает skiko-jvm-<os> для рантайма Compose UI-тестов на CI (Linux/Win/macOS)
+            implementation(compose.desktop.currentOs)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
